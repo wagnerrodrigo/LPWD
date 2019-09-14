@@ -33,7 +33,7 @@ public class PersistenceUtil {
             }            
         }
     }
-    public static EntityManager getEntityManager(){
+    public static EntityManager getEntityManager(){ // padrao de projeto singleton
         EntityManager em = MANAGER.get();
         if(em == null){
             em = FACTORY.createEntityManager();
