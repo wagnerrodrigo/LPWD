@@ -35,15 +35,32 @@ public class CursoDAO {
             if(curso != null && curso.getIdCurso() > 0){
                 return curso;
             }else{
-                Logger.getLogger(PersistenceUtil.class.getName()).log(Level.INFO," erro");
+                Logger.getLogger(PersistenceUtil.class.getName()).log(Level.INFO," Nao encontrado o curso");
                 return null;
             }
             } catch (Exception e){
                 Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING," erro");
-                return null;
-            
-        }
-            
+                return null;        
+        }     
     }
+    
+    public Curso buscar(Curso c){
+        try {
+            EntityManager em = PersistenceUtil.getEntityManager();
+            Query query = em.createQuery("SELECT c FROM Curso c WHERE c.id = :id");
+            query.setParameter("id",c.getIdCurso());
+            Curso curso = (Curso) query.getSingleResult();
+            if(curso != null && curso.getIdCurso() > 0){
+                return curso;
+            }else{
+                Logger.getLogger(PersistenceUtil.class.getName()).log(Level.INFO," Nao encontrado o curso");
+                return null;
+            }
+        } catch (Exception e) {
+             Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING," erro");
+                return null; 
+        }
+    }
+    
     
 }
