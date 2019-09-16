@@ -73,6 +73,17 @@ public class CursoDAO {
             Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Desculpe nao foi possivel retonar todos os curso");
             return new ArrayList<>();
         }
-    }  
+    }
+    
+      public Curso remover(Curso c){
+         try {
+             EntityManager em = PersistenceUtil.getEntityManager();
+             em.getTransaction();
+            Query query = em.createQuery("DELETE c FROM Curso c WHERE c.id = :id");
+            query.setParameter("id",c.getIdCurso());
+            Curso curso = (Curso) query.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
     
 }
