@@ -7,6 +7,8 @@ package br.cesjf.wagnerlpwd.dao;
 
 import br.cesjf.wagnerlpwd.model.Curso;
 import br.cesjf.wagnerlpwd.util.PersistenceUtil;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
@@ -62,5 +64,15 @@ public class CursoDAO {
         }
     }
     
+    public List<Curso> buscaTodos(){
+        try {
+           EntityManager em = PersistenceUtil.getEntityManager();
+           Query query = em.createQuery("SELECT c FROM Curso c");
+           return query.getResultList();
+        } catch (Exception e) {
+            Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Desculpe nao foi possivel retonar todos os curso");
+            return new ArrayList<>();
+        }
+    }  
     
 }
