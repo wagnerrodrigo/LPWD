@@ -109,7 +109,22 @@ public class CursoDAO {
         }
     }
       
+    public String removelAll(){
+            try {
+                EntityManager em = PersistenceUtil.getEntityManager();
+                em.getTransaction().begin();
+                Query query = em.createQuery("DELETE FROM Curso");
+                query.executeUpdate();
+                em.getTransaction();
+                Logger.getLogger(PersistenceUtil.class.getName()).log(Level.INFO,"Todo os curso foram deletados!! ");
+                return "Todos os cursos foram Deletados!!!!";
+            } catch (Exception e) {
+                Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Nao foi possível remover todos os Curso!!!"
+                        + " por favor entre em cotado com o suporte",e.getMessage());
+                return "Não foi possível deletar todos os cursos!!!";
+            }
+    }
+      
+     
     
-      
-      
 }
