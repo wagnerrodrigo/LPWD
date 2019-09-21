@@ -85,14 +85,31 @@ public class CursoDAO {
              Logger.getLogger(PersistenceUtil.class.getName()).log(Level.INFO,"Curso Removidos com su");
              return "Curso" + curso.getNmCurso() + "removido com sucesso";
         } catch (Exception e) {
-             Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Erro ao remover ");
+             Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Nao foi possivle remover o curso ", e.getMessage());
              return " Desculpe não foi possível remover o curso! entre em contato com o suporte" + curso.getNmCurso() +"";
         }
         
     }
       
-    
+    public String persistir(Curso curso){
+        EntityManager em  = PersistenceUtil.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            curso = em.merge(curso);
+            em.getTransaction().commit();
+            Logger.getLogger(PersistenceUtil.class.getName()).log(Level.INFO,"Curso salvo com sucesso!!!");
+            return "Curso "+ curso.getNmCurso() + " Salvo com sucesso!";
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Nao foi possível salvar o curso ", e.getMessage());
+            if(e.getMessage().contains("ConstraintViolationExeption")){
+                return "Não foi possível salvar o curso "+ curso.getNmCurso()+", pois o curso deve ser único" ;
+            }
+            return "Não foi possível salvar o curso" + curso.getNmCurso() + "!";
+        }
+    }
       
+    
       
       
 }
