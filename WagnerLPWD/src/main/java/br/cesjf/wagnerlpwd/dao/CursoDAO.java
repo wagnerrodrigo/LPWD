@@ -70,20 +70,29 @@ public class CursoDAO {
            Query query = em.createQuery("SELECT c FROM Curso c");
            return query.getResultList();
         } catch (Exception e) {
-            Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Desculpe nao foi possivel retonar todos os curso");
+            Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Desculpe nao foi possivel retonar todos os curso, Por favor entre em contato com o suporte");
             return new ArrayList<>();
         }
     }
     
-      public Curso remover(Curso c){
+      public String remover(Curso curso){
          try {
              EntityManager em = PersistenceUtil.getEntityManager();
-             em.getTransaction();
-            Query query = em.createQuery("DELETE c FROM Curso c WHERE c.id = :id");
-            query.setParameter("id",c.getIdCurso());
-            Curso curso = (Curso) query.executeUpdate();
+             em.getTransaction().begin();
+             curso = em.merge(curso);
+             em.remove(curso);
+             em.getTransaction().commit();
+             Logger.getLogger(PersistenceUtil.class.getName()).log(Level.INFO,"Curso Removidos com su");
+             return "Curso" + curso.getNmCurso() + "removido com sucesso";
         } catch (Exception e) {
+             Logger.getLogger(PersistenceUtil.class.getName()).log(Level.WARNING,"Erro ao remover ");
+             return " Desculpe não foi possível remover o curso! entre em contato com o suporte" + curso.getNmCurso() +"";
         }
+        
     }
+      
     
+      
+      
+      
 }
