@@ -1,12 +1,12 @@
 Questao 1:
 
 Identifique nos exemplos acima e explique:
-a) O Verbo HTTP.>>  GET
-b) O Recurso solicitado.  >> GET /exemplo-servlet/contador HTTP/1.1
-c) 2 cabeçalhos da requisição.  >> HTTP/1.1 200 O\K  || GET /exemplo-servlet/contador HTTP/1.1
-d) O Status code. >> HTTP/1.1 200 ok 
+a) O Verbo HTTP.>>  GET #V#
+b) O Recurso solicitado.  >> GET /exemplo-servlet/contador #V# 
+c) 2 cabeçalhos da requisição.  >> HTTP/1.1 200 O\K  || GET /exemplo-servlet/contador HTTP/1.1 *ERRO*
+d) O Status code. >> 200 ok #V#
 e) 2 cabeçalhos da resposta. HTTP/1.1 404  HTTP/1.1 200
-f) O conteúdo obtido do servidor. >> O servelt contador com a requisicao numero 17
+f) O conteúdo obtido do servidor. >> todo o html
 
 
 
@@ -15,24 +15,24 @@ Questão 2:
 Em relação à API do JAVA EE referente a Servlets e JSPs, verifique se as afirmativas abaixo são
 Verdadeiras ou Falsas.
 
-V	1. Nunca devemos escrever Servlets, JSPs são uma tecnologia mais recente e por isso
+V	1. Nunca devemos escrever Servlets, JSPs são uma tecnologia mais recente e por isso #Res falso# #Erro#
 deve ser utilizada.
 
-F	2. Como todo JSP, na verdade, é um Servlet, tanto faz a utilização de qualquer uma
+F	2. Como todo JSP, na verdade, é um Servlet, tanto faz a utilização de qualquer uma  #Res falso# #V#
 das tecnologias no desenvolvimento, sendo essa uma decisão do programador.Página	2 de	2
 
-F	3. Devemos evitar escrever HTML/CSS/JavaScript junto com o código Java nos
+F	3. Devemos evitar escrever HTML/CSS/JavaScript junto com o código Java nos    #Res Verdadeiro# #Erro#
 Servlets.
 
-V	4. Os dados guardados na sessão são inseguros pois podem ser acessados a partir do
+V	4. Os dados guardados na sessão são inseguros pois podem ser acessados a partir do #Res falso# #Erro#
 navegador.
 
-V	5. O JSTL juntamente com a Expression Language facilitam o desenvolvimento de
+V	5. O JSTL juntamente com a Expression Language facilitam o desenvolvimento de    #Res Verdadeiro# #V#
 páginas web dinâmicas sem a necessidade de se utilizar código java na camada de
 visão, facilitando sua manutenção inclusive por profissionais que não dominam a
 linguagem, como Designers de Interface e UX.
 
-V	6. Um Servlet, uma vez instanciado, é compartilhado por todas as requisições dali em
+V	6. Um Servlet, uma vez instanciado, é compartilhado por todas as requisições dali em    #Res Verdadeiro# #V#
 diante.
 
 
