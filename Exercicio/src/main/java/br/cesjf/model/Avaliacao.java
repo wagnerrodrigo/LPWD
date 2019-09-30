@@ -5,11 +5,18 @@
  */
 package br.cesjf.model;
 
+import com.sun.net.httpserver.HttpServer;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 /**
  *
  * @author alunoces
  */
-public class Avaliacao {
+public  class Avaliacao {
     public int curso;
     public int instrutor;
     public int dia;
@@ -23,6 +30,7 @@ public class Avaliacao {
     public Avaliacao() {
     }
 
+  
     public Avaliacao(int curso, int instrutor, int dia, boolean b1, boolean b2, boolean b3, boolean b4, boolean b5, boolean b6) {
         this.curso = curso;
         this.instrutor = instrutor;
@@ -119,6 +127,6 @@ public class Avaliacao {
                ", b5=" + b5 + 
                ", b6=" + b6 +  '}';
     }
-    
-    
+
+   
 }
