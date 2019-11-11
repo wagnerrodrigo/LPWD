@@ -6,6 +6,10 @@
 package br.cesjf.wagnerlpwd.dao;
 
 import br.cesjf.wagnerlpwd.model.Prova;
+<<<<<<< Updated upstream
+=======
+//import static br.cesjf.wagnerlpwd.model.Questao_.prova;
+>>>>>>> Stashed changes
 import br.cesjf.wagnerlpwd.util.PersistenceUtil;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +53,11 @@ public class ProvaDao {
     
 //    public Prova buscaProvaAno(Date ano){
 //            try {
+<<<<<<< Updated upstream
 //            EntityManager em = PersistenceUtil.getEntityManager();
+=======
+//                EntityManager em = PersistenceUtil.getEntiyManager();
+>>>>>>> Stashed changes
 //                Query query = em.createQuery("SELECT an FROM ano an WHERE an.ano =:ano");
 //                query.setParameter("ano",ano);
 //                Prova prova = (Prova) query.getSingleResult();
@@ -61,6 +69,7 @@ public class ProvaDao {
 //            } catch (Exception e) {
 //            }
 //    }
+<<<<<<< Updated upstream
     public List<Prova> buscarTodasProva(){
         try {
             EntityManager em = PersistenceUtil.getEntityManager();
@@ -105,6 +114,8 @@ public class ProvaDao {
             return "Não foi possivel salvar a prova" + prova.getIdProva() + "!!!";
         }
     }
+=======
+>>>>>>> Stashed changes
     
     public String removelTudo(){
         try {
