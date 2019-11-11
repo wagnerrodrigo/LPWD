@@ -26,5 +26,5 @@ public class QuestaoDAO {
     }
     
     
-    public Questao buscar()
+//    public Questao buscar()
 }
