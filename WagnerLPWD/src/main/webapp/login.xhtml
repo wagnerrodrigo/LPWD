@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<!--<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        
+        
+        <ui:composition template="/WEB-INF/templates/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+    <style type="text/css">
+        .tes {
+            background: #ff0100;
+        }
+            
+        </style>
+    </h:head>
+    
+    
+    <ui:define name="content">
+        <h:form class="tes">    
+            <center>
+                <h3>Nome de usuario</h3>
+
+                <p:inputText />
+
+                <h3>Senhas</h3>
+                <span class="ui-float-label">
+                    <p:password id="pwd1" value="#{passwordView.password5}" match="pwd2" label="Password 1" required="true" />
+                </span>
+            </center>
+        </h:form>
+    </ui:define>
+</ui:composition>
+        
+        
+    </body>
+</html>-->
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+    <style type="text/css">
+        .tes {
+            background: #ff0100;
+        }
+            
+        </style>
+    </h:head>
+    
+    
+    <ui:define name="content">
+        <h:form class="tes">    
+            <center>
+                <h3>Nome de usuario</h3>
+
+                <p:inputText />
+
+                <h3>Senhas</h3>
+                <span class="ui-float-label">
+                    <p:password id="pwd1" value="#{passwordView.password5}" match="pwd2" label="Password 1" required="true" />
+                </span>
+            </center>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
