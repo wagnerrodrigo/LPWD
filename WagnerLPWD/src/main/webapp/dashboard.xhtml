@@ -21,32 +21,32 @@
         
         
        <style type="text/css">
-    .label {
-        width:20%;
-        padding:4px;
-    }
- 
-    .value {
-        width:80%;
-        padding:4px;
-    }
- 
-    .grid {
-        width:100%;
-    }
- 
-    .error {
-        color: red;
-    }
- 
-    .outputLabel {
-        font-weight: bold;
-    }
- 
-    .grid {
-        width:33%;
-        padding:4px;
-    }
+                .label {
+                    width:20%;
+                    padding:4px;
+                }
+
+                .value {
+                    width:80%;
+                    padding:4px;
+                }
+
+                .grid {
+                    width:100%;
+                }
+
+                .error {
+                    color: red;
+                }
+
+                .outputLabel {
+                    font-weight: bold;
+                }
+
+                .grid {
+                    width:33%;
+                    padding:4px;
+                }
 </style>
  
  
@@ -55,21 +55,47 @@
     <p:growl id="growl" sticky="true" showDetail="true"/>
  
     <p:wizard flowListener="#{userWizard.onFlowProcess}">
+       
         <p:tab id="curso" title="Curso">
-            <p:panel header="Personal Details">
+            <p:panel header="Detalhes dos Curso">
                 <p:messages />
                 <h:panelGrid columns="2" columnClasses="label, value">
-                    <h:outputText value="Firstname: *" />
-                    <p:inputText value="#{userWizard.user.firstname}" required="true" label="Firstname"/>
+                    <h:outputText value="Selecione o curso *" />                  
+                     <p:selectOneMenu id="curso-dash" value="#{selectOneMenuView.console}" style="width:45%">
+                        <f:selectItem itemLabel="" itemValue="" />
+                        <f:selectItem itemLabel="Engenharia Software" itemValue="id_banco_dados" />
+                        <f:selectItem itemLabel="Sistema de Informação" itemValue="id_banco_dados2" />
+                        <f:selectItem itemLabel="Administração" itemValue="id_banco_dados3" />
+                        <f:selectItem itemLabel="Psicologia" itemValue="PS4" />
+                        <f:selectItem itemLabel="Marketing" itemValue="Wii U" />
+                        <f:facet name="footer">
+                           <p:separator />
+                           <h:outputText value="3 consoles" style="font-weight:bold;"/>
+                        </f:facet>
+                    </p:selectOneMenu>
+                    
+                    
+                    
+                    <h:outputText value="Siglas do Curso" />
+                   
+                    <p:selectOneMenu id="sigla-curso" value="#{selectOneMenuView.console}" style="width:17%">
+                        <f:selectItem itemLabel="" itemValue="" />
+                        <f:selectItem itemLabel="Eng Soft" itemValue="id_banco_dados" />
+                        <f:selectItem itemLabel="BSI" itemValue="id_banco_dados2" />
+                        <f:selectItem itemLabel="ADM" itemValue="id_banco_dados3" />
+                        <f:selectItem itemLabel="PSI" itemValue="PS4" />
+                        <f:selectItem itemLabel="MKT" itemValue="Wii U" />
+                        <f:facet name="footer">
+                           <p:separator />
+                           <h:outputText value="3 consoles4" style="font-weight:bold;"/>
+                        </f:facet>
+                    </p:selectOneMenu>
  
-                    <h:outputText value="Lastname: *" />
-                    <p:inputText value="#{userWizard.user.lastname}" required="true" label="Lastname"/>
- 
-                    <h:outputText value="Age: " />
+                    <h:outputText value="Nome do Curso " />
                     <p:inputText value="#{userWizard.user.age}" />
- 
-                    <h:outputText value="Skip to last: " />
-                    <h:selectBooleanCheckbox value="#{userWizard.skip}" />
+                    
+                    <h:outputText value="Sigla do curso " />
+                    <p:inputText value="#{userWizard.user.age}" />
                 </h:panelGrid>
             </p:panel>
         </p:tab>
@@ -128,7 +154,7 @@
         
         
         
-        <p:tab id="minhasNotas" title="Minhas Notas">
+        <p:tab id="minhasNotas" title="Minhas Notas ">
             <p:panel header="Contact Information">
                 <p:messages />
                 <h:panelGrid columns="2" columnClasses="label, value">
@@ -189,6 +215,7 @@
                 <p:commandButton value="Submit" action="#{userWizard.save}" update="growl" process="@this"/>
             </p:panel>
         </p:tab>
+        
     </p:wizard>
  
 </h:form>
