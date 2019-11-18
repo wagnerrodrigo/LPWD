@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<!--<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>-->
+
+
+
+
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+       
+        
+        
+        
+        <h:form>
+    <h3 style="margin-top:0">Client</h3>
+    <p:tree value="#{treeBasicView.root}" var="node">
+        <p:treeNode>
+            <h:outputText value="#{node}" />
+        </p:treeNode>
+    </p:tree>
+     
+    <h3>Ajax</h3>
+    <p:tree value="#{treeBasicView.root}" var="node" dynamic="true">
+        <p:treeNode>
+            <h:outputText value="#{node}" />
+        </p:treeNode>
+    </p:tree>
+</h:form>
+        
+        
+        
+    </ui:define>
+</ui:composition>
