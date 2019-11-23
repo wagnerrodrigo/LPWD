@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>-->
+
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+        
+        <p:tabMenu activeIndex="">
+            <p:menuitem value="Prova" outcome="/prova.xhtml" icon="pi pi-star">
+                <f:param name="prova" value="0" />
+            </p:menuitem>
+            <p:menuitem value="Questoes" outcome="/questoes.xhtml" icon="">
+                <f:param name="questoes" value="1" />
+            </p:menuitem>
+            <p:menuitem value="Usuario" outcome="/usuario.xhtml" icon="">
+                <f:param name="usuario" value="2" />
+            </p:menuitem>
+            
+        </p:tabMenu>
+        
+        
+        
+        
+        
+    </ui:define>
+</ui:composition>
