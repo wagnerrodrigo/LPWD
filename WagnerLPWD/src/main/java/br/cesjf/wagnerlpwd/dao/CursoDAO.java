@@ -64,7 +64,7 @@ public class CursoDAO {
         }
     }
     
-    public List<Curso> buscaTodos(){
+    public List<Curso> buscarTodas(){
         try {
            EntityManager em = PersistenceUtil.getEntityManager();
            Query query = em.createQuery("SELECT c FROM Curso c");
