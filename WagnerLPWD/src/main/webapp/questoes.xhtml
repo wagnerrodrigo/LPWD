@@ -105,30 +105,29 @@
                 
                  <!--Fim da tabela-->
                  <br/>
-                  <p:column>
-                                    <p:commandButton value="Salvar" actionListener="#{assuntoBean.record}" onclick="record.hide()" alt="Record"/> 
+                 <p:column>
+                    <p:commandButton icon="ui-icon-plus" value="Novo" onclick="PF('record').show();"/> 
                          
                 </p:column>
                 
                 
-<!--                <p:dialog header="Novo" widgetVar="record" modal="true" focus="name">
+                <p:dialog header="Novo" widgetVar="record" modal="true" focus="name">
                 <p:panelGrid id="panelRecord" columns="2"> 
-                    Código:
-                    
-                    <p:inputText id="cod" value="#{assuntoBean.assunto.idtbAssunto}" /
-              
-                    Ano da Prova:
+         
+                    Tipo da Questão
                     <p:inputText id="name" value="" />
-                    Curso:
-                    <p:inputText id="descricaoAssunto" value="#{assuntoBean.assunto.descricaoAssunto}" />
-                    Quest:
-                    <p:inputText id="Assunto" value="#{assuntoBean.assunto.assunto}" />
+                    Descrição da Questão
+                    <p:inputText id="descricaoAssunto" value="#{assuntoBean.assunto.descricaoAssunto}" />           
                 </p:panelGrid>  
                 <br/>
                 <p:commandButton value="Salvar" actionListener="#{assuntoBean.record}" onclick="record.hide()" alt="Record"/> 
-            </p:dialog>-->
+            </p:dialog>
 
-                
+                <p:dialog header="Deletar" widgetVar="remove" modal="false"> 
+                    Você tem certeza?
+                    <p:commandButton value="Deletar" actionListener="#{assuntoBean.exclude}" onclick="remove.hide()" alt="Delete" /> 
+                </p:dialog>
+                   
                 
                 
             </p:panel>
