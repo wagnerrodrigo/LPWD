@@ -9,7 +9,7 @@ import br.cesjf.wagnerlpwd.dao.QuestaoDAO;
 import br.cesjf.wagnerlpwd.model.Questao;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 
@@ -17,15 +17,15 @@ import javax.faces.event.ActionEvent;
  *
  * @author wagner
  */
-@ManagedBean
+@ManagedBean(name = "questaoBean")
 @ViewScoped
-public class questoesBean {
+public class QuestoesBean {
     Questao questao = new Questao();
     
     List questoes = new ArrayList();
 
         
-    public questoesBean() {
+    public QuestoesBean() {
         questoes = new QuestaoDAO().buscarTodas();
         questao = new Questao();
     }
